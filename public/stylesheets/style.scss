@@ -1,0 +1,183 @@
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gold: #fda354;
+$color-silver: #b9b9b9;
+$color-bronze: #da664c;
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $color-black;
+  color: $color-white;
+  font-family: 'Helvetica', 'HelveticaNeue', 'Helvetica Neue', 'Helvetica-Neue', Arial, sans-serif;
+}
+
+.podium {
+  position: fixed;
+  top: 30%;
+  right: 10%;
+  font-size: 0;
+}
+
+.medal {
+  height: 275px;
+  width: 100px;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+
+  &.-gold {
+    .medal-body {
+      background-image: radial-gradient(50% 50px, circle, rgba($color-gold, 0) 42px, $color-gold 43px);
+      box-shadow: 0px 5px 2px 0 rgba($color-gold, 0.8),
+                  0px 10px 2px 0 rgba($color-gold, 0.5),
+                  0px 15px 2px 0 rgba($color-gold, 0.2);
+    }
+  }
+
+  &.-silver {
+    vertical-align: -50px;
+
+    .medal-body {
+      background-image: radial-gradient(50% 50px, circle, rgba($color-silver, 0) 42px, $color-silver 43px);
+      box-shadow: 0px 5px 2px 0 rgba($color-silver, 0.8),
+                  0px 10px 2px 0 rgba($color-silver, 0.5),
+                  0px 15px 2px 0 rgba($color-silver, 0.2);
+    }
+  }
+
+  &.-bronze {
+    vertical-align: -75px;
+
+    .medal-body {
+      background-image: radial-gradient(50% 50px, circle, rgba($color-bronze, 0) 42px, $color-bronze 43px);
+      box-shadow: 0px 5px 2px 0 rgba($color-bronze, 0.8),
+                  0px 10px 2px 0 rgba($color-bronze, 0.5),
+                  0px 15px 2px 0 rgba($color-bronze, 0.2);
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    z-index: 1;
+  }
+
+  &::before {
+    bottom: 100%;
+    margin-bottom: -50px;
+    background: radial-gradient(50% 100%, circle, rgba($color-black, 0) 50px, $color-black 51px);
+    background-repeat: no-repeat;
+  }
+
+  &::after {
+    top: 100%;
+    margin-top: -50px;
+    background: radial-gradient(50% 100%, circle, rgba($color-black, 0) 50px, $color-black 51px);
+    background-repeat: no-repeat;
+  }
+}
+
+.medal-body {
+  position: relative;
+  z-index: 2;
+  border-radius: 50px;
+  width: 100%;
+  height: 100%;
+}
+
+.countries {
+  position: absolute;
+  width: 100%;
+  top: 60%;
+  left: 0;
+  margin-bottom: 50%;
+
+  &::before, &::after {
+    content: "";
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    height: 100%;
+    width: 60%;
+    background: rgba($color-black, 0.8);
+  }
+
+  &::before {
+    top: 50%;
+    margin-top: 75px;
+  }
+
+  &::after {
+    bottom: 50%;
+    margin-bottom: 75px;
+  }
+}
+
+.country {
+  position: relative;
+}
+
+.country-identifier {
+  height: 150px;
+  line-height: 150px;
+  display: inline-block;
+  position: relative;
+}
+
+.country-name {
+  margin: 0;
+  font-size: 70px;
+}
+
+.country-count {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: -100px;
+  color: rgba($color-white, 0.2);
+}
+
+.country-medals {
+  position: absolute;
+  right: 10%;
+  top: -50px;
+  margin-right: 6px;
+  font-size: 0;
+}
+
+.country-medal {
+  display: inline-block;
+  font-size: 80px;
+  font-weight: 800;
+  width: 100px;
+  text-align: center;
+  letter-spacing: -0.05em;
+
+  &.-gold {
+    color: $color-gold;
+  }
+
+  &.-silver {
+    vertical-align: -50px;
+    color: $color-silver;
+  }
+
+  &.-bronze {
+    vertical-align: -75px;
+    color: $color-bronze;
+  }
+}
