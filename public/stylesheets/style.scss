@@ -32,7 +32,7 @@ body {
   left: 0;
   width: 100%;
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 768px) {
     position: relative;
     top: auto;
     left: auto;
@@ -70,7 +70,7 @@ body {
     left: 100%;
   }
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 768px) {
     top: 50%;
     left: auto;
     right: 0;
@@ -112,12 +112,30 @@ body {
   z-index: 5;
   display: inline-block;
 
+  @media screen and (min-width: 768px) {
+    width: 80px;
+    height: 225px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 100px;
+    height: 275px;
+  }
+
   &.-gold {
     .medal-body {
       background-image: radial-gradient(50% 50px, circle, rgba($color-gold, 0) 42px, $color-gold 43px);
       box-shadow: 0px 5px 2px 0 rgba($color-gold, 0.8),
                   0px 10px 2px 0 rgba($color-gold, 0.5),
                   0px 15px 2px 0 rgba($color-gold, 0.2);
+
+      @media screen and (min-width: 768px) {
+        background-image: radial-gradient(50% 40px, circle, rgba($color-gold, 0) 32px, $color-gold 33px);
+      }
+
+      @media screen and (min-width: 1024px) {
+        background-image: radial-gradient(50% 50px, circle, rgba($color-gold, 0) 42px, $color-gold 43px);
+      }
     }
   }
 
@@ -129,6 +147,14 @@ body {
       box-shadow: 0px 5px 2px 0 rgba($color-silver, 0.8),
                   0px 10px 2px 0 rgba($color-silver, 0.5),
                   0px 15px 2px 0 rgba($color-silver, 0.2);
+
+      @media screen and (min-width: 768px) {
+        background-image: radial-gradient(50% 40px, circle, rgba($color-silver, 0) 32px, $color-silver 33px);
+      }
+
+      @media screen and (min-width: 1024px) {
+        background-image: radial-gradient(50% 50px, circle, rgba($color-silver, 0) 42px, $color-silver 43px);
+      }
     }
   }
 
@@ -140,6 +166,14 @@ body {
       box-shadow: 0px 5px 2px 0 rgba($color-bronze, 0.8),
                   0px 10px 2px 0 rgba($color-bronze, 0.5),
                   0px 15px 2px 0 rgba($color-bronze, 0.2);
+
+      @media screen and (min-width: 768px) {
+        background-image: radial-gradient(50% 40px, circle, rgba($color-bronze, 0) 32px, $color-bronze 33px);
+      }
+
+      @media screen and (min-width: 1024px) {
+        background-image: radial-gradient(50% 50px, circle, rgba($color-bronze, 0) 42px, $color-bronze 43px);
+      }
     }
   }
 
@@ -167,7 +201,7 @@ body {
     background-repeat: no-repeat;
   }
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 768px) {
     &::before,
     &::after {
       height: 100%;
@@ -196,7 +230,7 @@ body {
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 768px) {
     position: static;
     margin: calc(100vh - 275px) 0;
     padding: 0 0 0 50px;
@@ -217,7 +251,7 @@ body {
   text-align: center;
   counter-increment: item;
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 768px) {
     display: block;
     text-align: justify;
     text-justify: distribute;
@@ -232,7 +266,7 @@ body {
     font-size: 16px;
     opacity: 0.2;
 
-    @media screen and (min-width: 960px) {
+    @media screen and (min-width: 768px) {
       position: absolute;
       right: 100%;
       margin-right: 15px;
@@ -253,7 +287,7 @@ body {
 .country-identifier {
   display: block;
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 768px) {
     height: 150px;
     line-height: 150px;
     display: inline-block;
@@ -267,12 +301,24 @@ body {
   margin: 10px 0;
   font-size: 40px;
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 768px) {
     white-space: nowrap;
     max-width: calc(100vw - 550px);
     overflow: hidden;
     text-overflow: ellipsis;
     margin: 0;
+    font-size: 40px;
+  }
+
+  @media screen and (min-width: 960px) {
+    font-size: 50px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 60px;
+  }
+
+  @media screen and (min-width: 1280px) {
     font-size: 70px;
   }
 }
@@ -281,10 +327,22 @@ body {
   color: rgba($color-white, 0.2);
   font-size: 16px;
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 768px) {
     position: absolute;
     top: 100%;
     right: 0;
+    margin-top: -115px;
+  }
+
+  @media screen and (min-width: 960px) {
+    margin-top: -110px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-top: -105px;
+  }
+
+  @media screen and (min-width: 1280px) {
     margin-top: -100px;
   }
 }
@@ -296,14 +354,20 @@ body {
   font-size: 0;
   width: 100%;
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 768px) {
     position: static;
     width: auto;
     bottom: auto;
     display: inline-block;
     vertical-align: middle;
-    margin-right: 55px;
+    margin-right: 74px;
     margin-left: 0;
+    margin-bottom: 19px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-right: 55px;
+    margin-bottom: 0;
   }
 }
 
@@ -315,6 +379,16 @@ body {
   text-align: center;
   position: relative;
   letter-spacing: -0.05em;
+
+  @media screen and (min-width: 768px) {
+    width: 80px;
+    font-size: 60px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 100px;
+    font-size: 80px;
+  }
 
   &.-gold {
     color: $color-gold;
@@ -337,7 +411,7 @@ body {
     top: -15px;
     color: rgba($color-white, 0.2);
 
-    @media screen and (min-width: 960px) {
+    @media screen and (min-width: 768px) {
       position: relative;
       display: inline-block;
     }
