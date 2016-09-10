@@ -194,6 +194,7 @@ body {
   height: 100%;
   height: 100vh;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 
   @media screen and (min-width: 960px) {
     position: static;
@@ -290,7 +291,7 @@ body {
 
 .country-medals {
   position: absolute;
-  bottom: 39px;
+  bottom: 38px;
   margin-left: -12px;
   font-size: 0;
   width: 100%;
