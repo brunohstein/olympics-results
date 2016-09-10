@@ -9,6 +9,7 @@ database.countries = database.countries.map(function(country) {
 
 router.get('/', function(req, res, next) {
   res.render('index', {
+    title: 'Olympics Medal Count',
     countries: database.countries
   });
 });

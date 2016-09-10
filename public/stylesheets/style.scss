@@ -15,50 +15,92 @@ ul {
 }
 
 body {
+  margin: 8px;
   background: $color-black;
   color: $color-white;
   font-family: 'Helvetica', 'HelveticaNeue', 'Helvetica Neue', 'Helvetica-Neue', Arial, sans-serif;
 }
 
 .title {
-  font-size: 50px;
-  padding: 50px;
+  font-size: 24px;
+  padding: 20px;
   color: $color-white;
-  position: relative;
   z-index: 6;
-  margin-bottom: -16%;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  @media screen and (min-width: 960px) {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    font-size: 50px;
+    padding: 50px;
+    text-align: left;
+  }
 }
 
 .podium {
   position: fixed;
   z-index: 4;
-  top: 50%;
-  margin-top: -150px;
-  right: 0;
-  margin-right: 160px;
   font-size: 0;
+  top: 100%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -150px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    top: 0;
+    background: $color-black;
+  }
 
   &::before {
-    content: "";
-    position: fixed;
-    z-index: 3;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 60%;
-    width: calc(100% - 460px);
-    background: linear-gradient(to bottom, rgba($color-black, 0.8) 0%, rgba($color-black, 0.8) 40%, rgba($color-black, 0) 40.1%, rgba($color-black, 0) 60%, rgba($color-black, 0.8) 60.1%, rgba($color-black, 0.8) 100%);
+    right: 100%;
   }
 
   &::after {
-    content: "";
-    position: fixed;
-    z-index: 3;
+    left: 100%;
+  }
+
+  @media screen and (min-width: 960px) {
+    top: 50%;
+    left: auto;
     right: 0;
-    top: 0;
-    height: 100%;
-    width: 160px;
-    background: linear-gradient(to bottom, rgba($color-black, 0.8) 0%, rgba($color-black, 0.8) 31%, rgba($color-black, 0) 31.1%, rgba($color-black, 0) 50%, rgba($color-black, 0.8) 50.1%, rgba($color-black, 0.8) 100%);
+    margin-top: -150px;
+    margin-right: 160px;
+
+    &::before {
+      content: "";
+      position: fixed;
+      z-index: 3;
+      right: auto;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 60%;
+      width: calc(100% - 460px);
+      background: linear-gradient(to bottom, rgba($color-black, 0.8) 0%, rgba($color-black, 0.8) 40%, rgba($color-black, 0) 40.1%, rgba($color-black, 0) 60%, rgba($color-black, 0.8) 60.1%, rgba($color-black, 0.8) 100%);
+    }
+
+    &::after {
+      content: "";
+      position: fixed;
+      z-index: 3;
+      left: auto;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 160px;
+      background: linear-gradient(to bottom, rgba($color-black, 0.8) 0%, rgba($color-black, 0.8) 31%, rgba($color-black, 0) 31.1%, rgba($color-black, 0) 50%, rgba($color-black, 0.8) 50.1%, rgba($color-black, 0.8) 100%);
+    }
   }
 }
 
@@ -107,8 +149,7 @@ body {
     position: absolute;
     left: 0;
     width: 100%;
-    height: 100%;
-    height: 100vh;
+    height: 110px;
     z-index: 1;
   }
 
@@ -125,6 +166,14 @@ body {
     background: radial-gradient(50% 100%, circle, rgba($color-black, 0) 50px, $color-black 51px);
     background-repeat: no-repeat;
   }
+
+  @media screen and (min-width: 960px) {
+    &::before,
+    &::after {
+      height: 100%;
+      height: 100vh;
+    }
+  }
 }
 
 .medal-body {
@@ -136,26 +185,60 @@ body {
 }
 
 .countries {
-  margin: 50% 0;
-  padding: 0 0 0 50px;
+  position: fixed;
+  padding: calc(50vh - 140px) 0 0;
+  white-space: nowrap;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  overflow: scroll;
+
+  @media screen and (min-width: 960px) {
+    position: static;
+    margin: calc(100vh - 275px) 0;
+    padding: 0 0 0 50px;
+    white-space: normal;
+    width: auto;
+    left: auto;
+    top: auto;
+    height: auto;
+    overflow: visible;
+  }
 }
 
 .country {
-  position: relative;
-  text-align: justify;
-  text-justify: distribute;
-  font-size: 0;
+  display: inline-block;
+  padding: 0 10px;
+  margin-right: 200px;
+  width: 100%;
+  text-align: center;
   counter-increment: item;
+
+  @media screen and (min-width: 960px) {
+    display: block;
+    text-align: justify;
+    text-justify: distribute;
+    font-size: 0;
+    padding: 0;
+    margin-right: 0;
+  }
 
   &::before {
     content: counter(item);
     color: $color-white;
-    position: absolute;
-    right: 100%;
-    margin-right: 15px;
     font-size: 16px;
-    bottom: 0;
-    margin-bottom: 48px;
+    opacity: 0.2;
+
+    @media screen and (min-width: 960px) {
+      position: absolute;
+      right: 100%;
+      margin-right: 15px;
+      bottom: 0;
+      margin-bottom: 48px;
+      opacity: 1;
+    }
   }
 
   &::after {
@@ -167,33 +250,60 @@ body {
 }
 
 .country-identifier {
-  height: 150px;
-  line-height: 150px;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  text-align: left;
+  display: block;
+
+  @media screen and (min-width: 960px) {
+    height: 150px;
+    line-height: 150px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    text-align: left;
+  }
 }
 
 .country-name {
-  margin: 0;
-  font-size: 70px;
+  margin: 10px 0;
+  font-size: 40px;
+
+  @media screen and (min-width: 960px) {
+    white-space: nowrap;
+    max-width: calc(100vw - 550px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    font-size: 70px;
+  }
 }
 
 .country-count {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  margin-top: -100px;
   color: rgba($color-white, 0.2);
   font-size: 16px;
+
+  @media screen and (min-width: 960px) {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: -100px;
+  }
 }
 
 .country-medals {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 155px;
+  position: absolute;
+  bottom: 39px;
+  margin-left: -12px;
   font-size: 0;
+  width: 100%;
+
+  @media screen and (min-width: 960px) {
+    position: static;
+    width: auto;
+    bottom: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 55px;
+    margin-left: 0;
+  }
 }
 
 .country-medal {
@@ -221,8 +331,14 @@ body {
   }
 
   &.-total {
+    display: none;
     position: absolute;
     top: -15px;
     color: rgba($color-white, 0.2);
+
+    @media screen and (min-width: 960px) {
+      position: relative;
+      display: inline-block;
+    }
   }
 }
