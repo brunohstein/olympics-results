@@ -258,6 +258,7 @@ body {
     font-size: 0;
     padding: 0;
     margin-right: 0;
+    position: relative;
   }
 
   &::before {
@@ -271,8 +272,20 @@ body {
       right: 100%;
       margin-right: 15px;
       bottom: 0;
-      margin-bottom: 48px;
+      margin-bottom: 57px;
       opacity: 1;
+    }
+
+    @media screen and (min-width: 960px) {
+      margin-bottom: 54px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      margin-bottom: 52px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      margin-bottom: 48px;
     }
   }
 
