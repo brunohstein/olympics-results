@@ -17,10 +17,18 @@ var elementMethods = {
 
   hasClass: function(className) {
     if (this.classList) {
-      this.classList.contains(className);
+      return this.classList.contains(className);
     } else {
-      new RegExp('(^| )' + className + '( |$)', 'gi').test(this.className);
+      return new RegExp('(^| )' + className + '( |$)', 'gi').test(this.className);
     }
+  },
+
+  hide: function() {
+    this.style.display = 'none';
+  },
+
+  show: function() {
+    this.style.display = '';
   }
 };
 
@@ -50,9 +58,6 @@ app.podium = {
   },
 
   setPosition: function() {
-    console.log('scrollPosition', this.scrollPosition);
-    console.log('innerHeight', window.innerHeight);
-
     if (this.scrollPosition > window.innerHeight / 4) {
       document.body.addClass('should-show-podium');
     } else {
@@ -61,4 +66,58 @@ app.podium = {
   }
 };
 
+app.search = {
+  container: document.querySelector('.search'),
+  icon: document.querySelector('.search-icon'),
+  input: document.querySelector('.search-input'),
+  names: document.querySelectorAll('.country-name'),
+
+  init: function() {
+    this.bind();
+  },
+
+  bind: function() {
+    this.icon.addEventListener('click', this.onIconClick.bind(this));
+    this.input.addEventListener('keyup', this.onInputKeyup.bind(this));
+  },
+
+  onIconClick: function(event) {
+    if (this.container.hasClass('is-opened')) {
+      this.close();
+    } else {
+      this.open();
+    }
+  },
+
+  onInputKeyup: function(event) {
+    this.filter();
+  },
+
+  close: function() {
+    this.container.removeClass('is-opened');
+    this.input.value = '';
+    this.filter();
+  },
+
+  open: function () {
+    this.container.addClass('is-opened');
+    this.input.focus();
+  },
+
+  filter: function() {
+    var value = this.input.value.toLowerCase();
+
+    for (i = 0; i < this.names.length; i++) {
+      var name = this.names[i];
+
+      name.parentNode.parentNode.hide();
+
+      if (name.innerText.toLowerCase().indexOf(value) > -1) {
+        name.parentNode.parentNode.show();
+      }
+    }
+  }
+};
+
 app.podium.init();
+app.search.init();
