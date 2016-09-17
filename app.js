@@ -1,5 +1,6 @@
 var express = require('express');
 var compression = require('compression');
+var minify = require('express-minify');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -36,6 +37,10 @@ app.use('/stylesheets', postcssMiddleware({
   },
   plugins: [autoprefixer]
 }));
+
+if (app.get('env') !== 'development') {
+  app.use(minify());
+}
 
 app.use(express.static(path.join(__dirname, 'public')));
 
