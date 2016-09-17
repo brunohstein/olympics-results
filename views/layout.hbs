@@ -7,8 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <noscript>
+      <style>
+        .podium {
+          opacity: 1;
+        }
+
+        @media screen and (min-width: 768px) {
+          .podium {
+            margin-top: -150px;
+          }
+        }
+      </style>
+    </noscript>
   </head>
   <body>
     {{{body}}}
+    <script src="javascripts/index.js" async></script>
   </body>
 </html>

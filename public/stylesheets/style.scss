@@ -49,8 +49,11 @@ body {
   font-size: 0;
   top: 100%;
   left: 50%;
-  margin-top: -200px;
   margin-left: -150px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: -200px;
+  }
 
   &::before,
   &::after {
@@ -74,8 +77,13 @@ body {
     top: 50%;
     left: auto;
     right: 0;
-    margin-top: -150px;
+    margin-top: 150px;
     margin-right: 160px;
+    transition: margin-top 0.75s ease 0s;
+
+    .should-show-podium & {
+      margin-top: -150px;
+    }
 
     &::before {
       content: "";
@@ -391,12 +399,16 @@ body {
     vertical-align: middle;
     margin-right: 74px;
     margin-left: 0;
-    margin-bottom: 19px;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.25s;
+
+    .should-show-podium & {
+      opacity: 1;
+    }
   }
 
   @media screen and (min-width: 1024px) {
     margin-right: 55px;
-    margin-bottom: 0;
   }
 }
 
