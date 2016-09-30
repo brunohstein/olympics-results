@@ -53,7 +53,7 @@ app.podium = {
   },
 
   onWindowScroll: function() {
-    this.scrollPosition = document.body.scrollTop;
+    this.scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     this.setPosition();
   },
 

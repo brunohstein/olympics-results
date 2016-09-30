@@ -19,6 +19,10 @@ body {
   background: $color-black;
   color: $color-white;
   font-family: 'Helvetica', 'HelveticaNeue', 'Helvetica Neue', 'Helvetica-Neue', Arial, sans-serif;
+
+  @media screen and (min-width: 768px) {
+    overflow-x: hidden;
+  }
 }
 
 .title {
@@ -119,7 +123,7 @@ body {
         rgba($color-black, 0.9) 33%,
         rgba($color-black, 0.8) 40%,
         rgba($color-black, 0) 44%,
-        rgba($color-black, 0) 54%,
+        rgba($color-black, 0) 53.99%,
         rgba($color-black, 0.8) 57%,
         rgba($color-black, 0.9) 65%,
         rgba($color-black, 0.9) 100%);
@@ -180,16 +184,19 @@ body {
   &.-gold {
     .medal-body {
       background-image: radial-gradient(50% 50px, circle, rgba($color-gold, 0) 42px, $color-gold 43px);
+      background-image: -moz-radial-gradient(50% 50px, circle, rgba($color-gold, 0) 42px, $color-gold 43px);
       box-shadow: 0px 5px 0 0 rgba($color-gold, 0.6),
                   0px 10px 0 0 rgba($color-gold, 0.3),
                   0px 15px 0 0 rgba($color-gold, 0.05);
 
       @media screen and (min-width: 768px) {
         background-image: radial-gradient(50% 40px, circle, rgba($color-gold, 0) 32px, $color-gold 33px);
+        background-image: -moz-radial-gradient(50% 40px, circle, rgba($color-gold, 0) 32px, $color-gold 33px);
       }
 
       @media screen and (min-width: 1024px) {
         background-image: radial-gradient(50% 50px, circle, rgba($color-gold, 0) 42px, $color-gold 43px);
+        background-image: -moz-radial-gradient(50% 50px, circle, rgba($color-gold, 0) 42px, $color-gold 43px);
       }
     }
   }
@@ -199,16 +206,19 @@ body {
 
     .medal-body {
       background-image: radial-gradient(50% 50px, circle, rgba($color-silver, 0) 42px, $color-silver 43px);
+      background-image: -moz-radial-gradient(50% 50px, circle, rgba($color-silver, 0) 42px, $color-silver 43px);
       box-shadow: 0px 5px 0 0 rgba($color-silver, 0.6),
                   0px 10px 0 0 rgba($color-silver, 0.3),
                   0px 15px 0 0 rgba($color-silver, 0.05);
 
       @media screen and (min-width: 768px) {
         background-image: radial-gradient(50% 40px, circle, rgba($color-silver, 0) 32px, $color-silver 33px);
+        background-image: -moz-radial-gradient(50% 40px, circle, rgba($color-silver, 0) 32px, $color-silver 33px);
       }
 
       @media screen and (min-width: 1024px) {
         background-image: radial-gradient(50% 50px, circle, rgba($color-silver, 0) 42px, $color-silver 43px);
+        background-image: -moz-radial-gradient(50% 50px, circle, rgba($color-silver, 0) 42px, $color-silver 43px);
       }
     }
   }
@@ -218,16 +228,19 @@ body {
 
     .medal-body {
       background-image: radial-gradient(50% 50px, circle, rgba($color-bronze, 0) 42px, $color-bronze 43px);
+      background-image: -moz-radial-gradient(50% 50px, circle, rgba($color-bronze, 0) 42px, $color-bronze 43px);
       box-shadow: 0px 5px 0 0 rgba($color-bronze, 0.6),
                   0px 10px 0 0 rgba($color-bronze, 0.3),
                   0px 15px 0 0 rgba($color-bronze, 0.05);
 
       @media screen and (min-width: 768px) {
         background-image: radial-gradient(50% 40px, circle, rgba($color-bronze, 0) 32px, $color-bronze 33px);
+        background-image: -moz-radial-gradient(50% 40px, circle, rgba($color-bronze, 0) 32px, $color-bronze 33px);
       }
 
       @media screen and (min-width: 1024px) {
         background-image: radial-gradient(50% 50px, circle, rgba($color-bronze, 0) 42px, $color-bronze 43px);
+        background-image: -moz-radial-gradient(50% 50px, circle, rgba($color-bronze, 0) 42px, $color-bronze 43px);
       }
     }
   }
@@ -246,6 +259,7 @@ body {
     bottom: 100%;
     margin-bottom: -50px;
     background: radial-gradient(50% 100%, circle, rgba($color-black, 0) 50px, $color-black 51px);
+    background: -moz-radial-gradient(50% 100%, circle, rgba($color-black, 0) 50px, $color-black 51px);
     background-repeat: no-repeat;
   }
 
@@ -253,6 +267,7 @@ body {
     top: 100%;
     margin-top: -50px;
     background: radial-gradient(50% 100%, circle, rgba($color-black, 0) 50px, $color-black 51px);
+    background: -moz-radial-gradient(50% 100%, circle, rgba($color-black, 0) 50px, $color-black 51px);
     background-repeat: no-repeat;
   }
 
@@ -287,7 +302,7 @@ body {
 
   @media screen and (min-width: 768px) {
     position: static;
-    margin: calc(100vh + 80px) 0;
+    margin: calc(100vh + 80px) 0 calc(100vh - 365px);
     padding: 0 0 0 80px;
     white-space: normal;
     width: auto;
@@ -297,8 +312,16 @@ body {
     overflow: visible;
   }
 
+  @media screen and (min-width: 960px) {
+    margin-top: calc(100vh - 300px);
+  }
+
   @media screen and (min-width: 1024px) {
-    margin: calc(100vh - 300px) 0;
+    margin-bottom: calc(100vh - 385px);
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-bottom: calc(100vh - 365px);
   }
 }
 
