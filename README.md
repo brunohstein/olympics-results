@@ -1,7 +1,3 @@
-### Installation
+Created by Bruno Stein and Filipe Guth for the 10k Apart contest.
 
-    $ npm install
-
-### Running
-
-    $ npm start
+Transfer size: 6.1kB.
