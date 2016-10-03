@@ -184,6 +184,7 @@ body {
   &.-gold {
     .medal-body {
       background-image: radial-gradient(50% 50px, circle, rgba($color-gold, 0) 42px, $color-gold 43px);
+      background-image: -webkit-radial-gradient(50% 50px, circle, rgba($color-gold, 0) 42px, $color-gold 43px);
       background-image: -moz-radial-gradient(50% 50px, circle, rgba($color-gold, 0) 42px, $color-gold 43px);
       box-shadow: 0px 5px 0 0 rgba($color-gold, 0.6),
                   0px 10px 0 0 rgba($color-gold, 0.3),
@@ -191,11 +192,13 @@ body {
 
       @media screen and (min-width: 768px) {
         background-image: radial-gradient(50% 40px, circle, rgba($color-gold, 0) 32px, $color-gold 33px);
+        background-image: -webkit-radial-gradient(50% 40px, circle, rgba($color-gold, 0) 32px, $color-gold 33px);
         background-image: -moz-radial-gradient(50% 40px, circle, rgba($color-gold, 0) 32px, $color-gold 33px);
       }
 
       @media screen and (min-width: 1024px) {
         background-image: radial-gradient(50% 50px, circle, rgba($color-gold, 0) 42px, $color-gold 43px);
+        background-image: -webkit-radial-gradient(50% 50px, circle, rgba($color-gold, 0) 42px, $color-gold 43px);
         background-image: -moz-radial-gradient(50% 50px, circle, rgba($color-gold, 0) 42px, $color-gold 43px);
       }
     }
@@ -206,6 +209,7 @@ body {
 
     .medal-body {
       background-image: radial-gradient(50% 50px, circle, rgba($color-silver, 0) 42px, $color-silver 43px);
+      background-image: -webkit-radial-gradient(50% 50px, circle, rgba($color-silver, 0) 42px, $color-silver 43px);
       background-image: -moz-radial-gradient(50% 50px, circle, rgba($color-silver, 0) 42px, $color-silver 43px);
       box-shadow: 0px 5px 0 0 rgba($color-silver, 0.6),
                   0px 10px 0 0 rgba($color-silver, 0.3),
@@ -213,11 +217,13 @@ body {
 
       @media screen and (min-width: 768px) {
         background-image: radial-gradient(50% 40px, circle, rgba($color-silver, 0) 32px, $color-silver 33px);
+        background-image: -webkit-radial-gradient(50% 40px, circle, rgba($color-silver, 0) 32px, $color-silver 33px);
         background-image: -moz-radial-gradient(50% 40px, circle, rgba($color-silver, 0) 32px, $color-silver 33px);
       }
 
       @media screen and (min-width: 1024px) {
         background-image: radial-gradient(50% 50px, circle, rgba($color-silver, 0) 42px, $color-silver 43px);
+        background-image: -webkit-radial-gradient(50% 50px, circle, rgba($color-silver, 0) 42px, $color-silver 43px);
         background-image: -moz-radial-gradient(50% 50px, circle, rgba($color-silver, 0) 42px, $color-silver 43px);
       }
     }
@@ -228,6 +234,7 @@ body {
 
     .medal-body {
       background-image: radial-gradient(50% 50px, circle, rgba($color-bronze, 0) 42px, $color-bronze 43px);
+      background-image: -webkit-radial-gradient(50% 50px, circle, rgba($color-bronze, 0) 42px, $color-bronze 43px);
       background-image: -moz-radial-gradient(50% 50px, circle, rgba($color-bronze, 0) 42px, $color-bronze 43px);
       box-shadow: 0px 5px 0 0 rgba($color-bronze, 0.6),
                   0px 10px 0 0 rgba($color-bronze, 0.3),
@@ -235,11 +242,13 @@ body {
 
       @media screen and (min-width: 768px) {
         background-image: radial-gradient(50% 40px, circle, rgba($color-bronze, 0) 32px, $color-bronze 33px);
+        background-image: -webkit-radial-gradient(50% 40px, circle, rgba($color-bronze, 0) 32px, $color-bronze 33px);
         background-image: -moz-radial-gradient(50% 40px, circle, rgba($color-bronze, 0) 32px, $color-bronze 33px);
       }
 
       @media screen and (min-width: 1024px) {
         background-image: radial-gradient(50% 50px, circle, rgba($color-bronze, 0) 42px, $color-bronze 43px);
+        background-image: -webkit-radial-gradient(50% 50px, circle, rgba($color-bronze, 0) 42px, $color-bronze 43px);
         background-image: -moz-radial-gradient(50% 50px, circle, rgba($color-bronze, 0) 42px, $color-bronze 43px);
       }
     }
@@ -259,6 +268,7 @@ body {
     bottom: 100%;
     margin-bottom: -50px;
     background: radial-gradient(50% 100%, circle, rgba($color-black, 0) 50px, $color-black 51px);
+    background: -webkit-radial-gradient(50% 100%, circle, rgba($color-black, 0) 50px, $color-black 51px);
     background: -moz-radial-gradient(50% 100%, circle, rgba($color-black, 0) 50px, $color-black 51px);
     background-repeat: no-repeat;
   }
@@ -267,6 +277,7 @@ body {
     top: 100%;
     margin-top: -50px;
     background: radial-gradient(50% 100%, circle, rgba($color-black, 0) 50px, $color-black 51px);
+    background: -webkit-radial-gradient(50% 100%, circle, rgba($color-black, 0) 50px, $color-black 51px);
     background: -moz-radial-gradient(50% 100%, circle, rgba($color-black, 0) 50px, $color-black 51px);
     background-repeat: no-repeat;
   }
